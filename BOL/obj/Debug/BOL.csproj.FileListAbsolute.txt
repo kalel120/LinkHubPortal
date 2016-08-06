@@ -7,3 +7,4 @@ E:\VS Projects\LinkHubUI\BOL\bin\Debug\EntityFramework.dll
 E:\VS Projects\LinkHubUI\BOL\bin\Debug\EntityFramework.SqlServer.dll
 E:\VS Projects\LinkHubUI\BOL\bin\Debug\EntityFramework.xml
 E:\VS Projects\LinkHubUI\BOL\bin\Debug\EntityFramework.SqlServer.xml
+E:\VS Projects\LinkHubUI\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
