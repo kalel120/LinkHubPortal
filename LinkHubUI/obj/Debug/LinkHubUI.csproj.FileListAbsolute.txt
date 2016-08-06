@@ -37,3 +37,5 @@ E:\VS Projects\LinkHubUI\LinkHubUI\bin\EntityFramework.dll
 E:\VS Projects\LinkHubUI\LinkHubUI\bin\BLL.pdb
 E:\VS Projects\LinkHubUI\LinkHubUI\bin\BOL.pdb
 E:\VS Projects\LinkHubUI\LinkHubUI\bin\EntityFramework.xml
+E:\VS Projects\LinkHubUI\LinkHubUI\bin\EntityFramework.SqlServer.dll
+E:\VS Projects\LinkHubUI\LinkHubUI\bin\EntityFramework.SqlServer.xml
