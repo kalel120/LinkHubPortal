@@ -1,0 +1,9 @@
+E:\VS Projects\LinkHubUI\BOL\bin\Debug\BOL.dll
+E:\VS Projects\LinkHubUI\BOL\bin\Debug\BOL.pdb
+E:\VS Projects\LinkHubUI\BOL\obj\Debug\BOL.dll
+E:\VS Projects\LinkHubUI\BOL\obj\Debug\BOL.pdb
+E:\VS Projects\LinkHubUI\BOL\bin\Debug\BOL.dll.config
+E:\VS Projects\LinkHubUI\BOL\bin\Debug\EntityFramework.dll
+E:\VS Projects\LinkHubUI\BOL\bin\Debug\EntityFramework.SqlServer.dll
+E:\VS Projects\LinkHubUI\BOL\bin\Debug\EntityFramework.xml
+E:\VS Projects\LinkHubUI\BOL\bin\Debug\EntityFramework.SqlServer.xml
