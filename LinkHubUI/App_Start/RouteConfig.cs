@@ -14,6 +14,7 @@ namespace LinkHubUI
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            ((Route) RouteTable.Routes[routes.Count-1]).DataTokens["area"]= "Common";
         }
     }
 }

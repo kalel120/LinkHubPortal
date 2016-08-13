@@ -1,7 +1,40 @@
-﻿
+﻿@model IEnumerable<BOL.tbl_Url>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Browse URL";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Title", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "ASC" : (ViewBag.SortOrder == "ASC" ? "DESC" : "ASC")), SortBy = "Title" })
+        </th>
+        <th>
+            @Html.ActionLink("URL", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "ASC" : (ViewBag.SortOrder == "ASC" ? "DESC" : "ASC")), SortBy = "Url" })
+        </th>
+        <th>
+            @Html.ActionLink("Description", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "ASC" : (ViewBag.SortOrder == "ASC" ? "DESC" : "ASC")), SortBy = "Description" })
+        </th>
 
-<h2>Index</h2>
+        <th>
+            @Html.ActionLink("Category", "Index", new { SortOrder = (ViewBag.SortOrder == null ? "ASC" : (ViewBag.SortOrder == "ASC" ? "DESC" : "ASC")), SortBy = "Category" })
+        </th>
+    </tr>
 
+    @foreach(var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlTitle)
+            </td>
+            <td>
+                <a target="_blank" href=@item.Url>@item.Url</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrlDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbl_Category.CategoryName)
+            </td>
+        </tr>
+    }
+</table>
