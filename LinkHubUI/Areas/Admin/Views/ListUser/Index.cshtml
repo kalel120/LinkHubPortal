@@ -1,7 +1,53 @@
-﻿
+﻿@model IEnumerable<BOL.tbl_User>
+
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>List of Users</h2>
 
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("User Email", "Index", new { SortOrder = ViewBag.SortOrder == null ? "ASC" : (ViewBag.SortOrder == "ASC" ? "DESC" : "ASC"), SortBy = "UserEmail", Page = ViewBag.CurrentPage == null ? "1" : ViewBag.CurrentPage })
+        </th>
+        <th>
+            @Html.ActionLink("User Role", "Index", new { SortOrder = ViewBag.SortOrder == null ? "ASC" : (ViewBag.SortOrder == "ASC" ? "DESC" : "ASC"), SortBy = "UserRole", Page = ViewBag.CurrentPage == null ? "1" : ViewBag.CurrentPage })
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach(var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+                </td>*@
+        </tr>
+    }
+</table>
+<ul class="pagination pagination-lg">
+    @{
+        double totalPages = ViewBag.TotalPages;
+        for(int index = 1 ; index <= totalPages ; index++) {
+            @*if(index == ViewBag.CurrentPage) {
+                    <li>  <b>@Html.ActionLink(index + " ", "Index", new { SortOrder = ViewBag.SortOrder ?? "ASC", SortBy = ViewBag.SortBy ?? "UserEmail", Page = index })</b></li>
+                }
+                else {
+                    <li>@Html.ActionLink(index + " ", "Index", new { SortOrder = ViewBag.SortOrder ?? "ASC", SortBy = ViewBag.SortBy ?? "UserEmail", Page = index })</li>
+                }*@
+            <li>@Html.ActionLink(index + " ", "Index", new { SortOrder = ViewBag.SortOrder ?? "ASC", SortBy = ViewBag.SortBy ?? "UserEmail", Page = index })</li>
+        }
+    }
+</ul>

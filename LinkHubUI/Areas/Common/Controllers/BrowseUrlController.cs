@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using BLL;
 
@@ -12,7 +13,8 @@ namespace LinkHubUI.Areas.Common.Controllers {
         }
 
         //Added SortOrder and SortBy Functionalities
-        public ActionResult Index(string sortOrder, string sortBy) {
+        //Added PageNumber functionality 
+        public ActionResult Index(string sortOrder, string sortBy, string page) {
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;
             //Filter and collect all approved urls
@@ -62,7 +64,17 @@ namespace LinkHubUI.Areas.Common.Controllers {
                     urlList = urlList.OrderBy(x => x.UrlTitle).ToList();
                     break;
             }
-            return View(urlList);
+            //Send Total number of pages to view
+            ViewBag.TotalPages = Math.Ceiling(_objUrls.GetAll().Where(x => x.IsApproved == "A").Count() / 10.0);
+
+            int currentPageNo = int.Parse(page == null ? "1" : page);
+            ViewBag.Page = currentPageNo;
+            /* Logic for taking only 10 results per page 
+             * If pageNumber = 2 then Skip (2-1) = 1 * 10 = 10 Pages 
+             * Then Take next 10 pages 
+             */
+            urlList = urlList.Skip((currentPageNo - 1) * 10).Take(10);
+            return View(urlList); 
         }
     }
 }

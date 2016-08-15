@@ -1,7 +1,5 @@
-﻿/* This class just passes the objects into Data access layer
- * 
+﻿/* This class just passes the objects into Data access layer 
  */
-
 using System.Collections.Generic;
 using BOL;
 using DAL;

@@ -16,7 +16,7 @@ namespace DAL {
 
         public IEnumerable<tbl_Url> GetAllUrl() {
             return _dbEntities.tbl_Url.ToList();
-        }
+        } 
 
        public tbl_Url GetUrlById(int id) {
             return _dbEntities.tbl_Url.Find(id);
@@ -24,7 +24,7 @@ namespace DAL {
 
         public void InsertUrl(tbl_Url url) {
             _dbEntities.tbl_Url.Add(url);
-            SaveUrl();
+            SaveChangesInUrl();
         }
 
         public void UpdateUrl(tbl_Url url) {
@@ -34,10 +34,10 @@ namespace DAL {
         public void Delete(int id) {
             tbl_Url objUrl = _dbEntities.tbl_Url.Find(id);
             _dbEntities.tbl_Url.Remove(objUrl);
-            SaveUrl();
+            SaveChangesInUrl();
         }
 
-        public void SaveUrl() {
+        public void SaveChangesInUrl() {
             _dbEntities.SaveChanges();
         }
 
