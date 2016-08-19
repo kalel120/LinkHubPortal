@@ -106,7 +106,6 @@
     <Content Include="Global.asax" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\ApproveUrl\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ListCategory\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <Content Include="Areas\Common\Views\_ViewStart.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -119,6 +118,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Common\Views\BrowseUrl\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ListUser\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ListCategory\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -16,7 +16,6 @@ namespace LinkHubUI.Areas.Admin.Controllers {
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;
 
-
             var userList = _objUserBs.GetAllUser();
             //Send total number of pages to the view
             ViewBag.TotalPages = Math.Ceiling(userList.Count() / 10.00);

@@ -1,7 +1,57 @@
-﻿
+﻿@model IEnumerable<BOL.tbl_Category>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>List of Categories</h2>
+
+<script>
+    function ConfirmDelete() {
+        return confirm("Are You Sure You Want To Delete?");
+    }
+</script>
+
+@if(TempData["DeleteMsg"] != null) {
+    <h2>
+        @TempData["DeleteMsg"].ToString();
+    </h2>
 }
 
-<h2>Index</h2>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("Name", "Index", new { SortOrder = ViewBag.SortOrder == null ? "ASC" : (ViewBag.SortOrder == "ASC" ? "DESC" : "ASC"), SortBy = "CategoryName", Page = ViewBag.CurrentPage ?? "1" })
+            </th>
+            <th>
+                @Html.ActionLink("Description", "Index", new { SortOrder = ViewBag.SortOrder == null ? "ASC" : (ViewBag.SortOrder == "ASC" ? "DESC" : "ASC"), SortBy = "CategoryDescription", Page = ViewBag.CurrentPage ?? "1" })
+            </th>
+            <th>Delete</th>
+        </tr>
 
+        @foreach(var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryDesc)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new { onclick = "return ConfirmDelete()" })
+                </td>
+            </tr>
+        }
+    </table>
+    <ul class="pagination pagination-lg">
+        @{
+            double totalPage = ViewBag.TotalPages;
+            for(int index = 1 ; index <= totalPage ; index++) {
+                <li> @Html.ActionLink(index + "", "Index", new { SortOrder = ViewBag.SortOrder ?? "ASC", SortBy = ViewBag.SortBy ?? "CategoryName", Page = index })</li>
+            }
+        }
+    </ul>
