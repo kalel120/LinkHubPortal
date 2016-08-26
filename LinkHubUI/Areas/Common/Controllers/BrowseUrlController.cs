@@ -6,19 +6,16 @@ using BLL;
 namespace LinkHubUI.Areas.Common.Controllers {
     public class BrowseUrlController : Controller {
         // GET: Common/BrowseUrl
-        // Fetch data from Business logic layer to UI
-        private readonly UrlBs _objUrls;
+        private readonly AdminBusiness objBs;
         public BrowseUrlController() {
-            _objUrls = new UrlBs();
+            objBs = new AdminBusiness();
         }
 
-        //Added SortOrder and SortBy Functionalities
-        //Added PageNumber functionality 
         public ActionResult Index(string sortOrder, string sortBy, string page) {
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;
             //Filter and collect all approved urls
-            var urlList = _objUrls.GetAll().Where(x => x.IsApproved == "P");
+            var urlList = objBs.UrlBusiness.GetAll().Where(x => x.IsApproved == "P");
             switch(sortBy) {
                 case "Title":
                     switch(sortOrder) {
@@ -65,7 +62,7 @@ namespace LinkHubUI.Areas.Common.Controllers {
                     break;
             }
             //Send Total number of pages to view
-            ViewBag.TotalPages = Math.Ceiling(_objUrls.GetAll().Where(x => x.IsApproved == "A").Count() / 10.0);
+            ViewBag.TotalPages = Math.Ceiling(objBs.UrlBusiness.GetAll().Where(x => x.IsApproved == "A").Count() / 10.0);
 
             int currentPageNo = int.Parse(page == null ? "1" : page);
             ViewBag.Page = currentPageNo;

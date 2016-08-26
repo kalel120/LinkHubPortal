@@ -6,9 +6,9 @@ using BLL;
 
 namespace LinkHubUI.Areas.Admin.Controllers {
     public class ListUserController : Controller {
-        private readonly UserBs _objUserBs;
+        private readonly AdminBusiness objBs;
         public ListUserController() {
-            _objUserBs = new UserBs();
+            objBs = new AdminBusiness();
         }
         // GET: Admin/ListUser
         public ActionResult Index(string sortOrder, string sortBy, string page) {
@@ -16,7 +16,7 @@ namespace LinkHubUI.Areas.Admin.Controllers {
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;
 
-            var userList = _objUserBs.GetAllUser();
+            var userList = objBs.UserBusiness.GetAllUser();
             //Send total number of pages to the view
             ViewBag.TotalPages = Math.Ceiling(userList.Count() / 10.00);
             switch(sortBy) {
