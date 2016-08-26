@@ -6,12 +6,16 @@ using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.Security.Controllers
 {
-    public class LogInController : Controller
+    public class LogInController : _BaseSecurityController
     {
         // GET: Security/LogIn
         public ActionResult Index()
         {
             return View();
+        }
+
+        private ActionResult View() {
+            throw new NotImplementedException();
         }
     }
 }

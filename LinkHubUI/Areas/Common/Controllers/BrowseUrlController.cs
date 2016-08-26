@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using BLL;
 
 namespace LinkHubUI.Areas.Common.Controllers {
-    public class BrowseUrlController : Controller {
-        // GET: Common/BrowseUrl
-        private readonly AdminBusiness objBs;
-        public BrowseUrlController() {
-            objBs = new AdminBusiness();
-        }
-
+    public class BrowseUrlController : _BaseCommonController {
+        // GET: Common/BrowseUrl       
         public ActionResult Index(string sortOrder, string sortBy, string page) {
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;

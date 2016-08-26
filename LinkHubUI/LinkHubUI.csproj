@@ -149,10 +149,13 @@
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\BrowseUrlController.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Common\Controllers\_BaseCommonController.cs" />
     <Compile Include="Areas\Security\Controllers\LogInController.cs" />
     <Compile Include="Areas\Security\Controllers\RegisterController.cs" />
+    <Compile Include="Areas\Security\Controllers\_BaseSecurityController.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\UrlController.cs" />
+    <Compile Include="Areas\User\Controllers\_BaseUserController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -178,10 +181,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\_BaseAdmin\" />
-    <Folder Include="Areas\Common\Models\" />
-    <Folder Include="Areas\Security\Models\" />
+    <Folder Include="Areas\Common\Views\_BaseCommon\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
