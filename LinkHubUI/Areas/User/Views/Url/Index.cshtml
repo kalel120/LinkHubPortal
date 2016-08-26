@@ -4,8 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+@if(TempData["Msg"] != null) {
+    <h2>
+        @TempData["Msg"].ToString();
+    </h2>
+}
 
 @using (Html.BeginForm("Create","Url",FormMethod.Post)) 
 {
@@ -15,7 +18,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.UrlTitle,"URL Title", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.UrlTitle,"URL Title", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UrlTitle, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UrlTitle, "", new { @class = "text-danger" })
@@ -23,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Url,"URL", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Url,"URL", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Url, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Url, "", new { @class = "text-danger" })
@@ -31,7 +34,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UrlDesc,"URL Description", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.UrlDesc,"URL Description", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UrlDesc, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UrlDesc, "", new { @class = "text-danger" })
@@ -39,28 +42,28 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CategoryId, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CategoryId, "Category", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("CategoryId", null, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.UserId, "UserId", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserId, "UserId", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("UserId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("UserId", null, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IsApproved, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IsApproved, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.IsApproved, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.IsApproved, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -70,7 +73,6 @@
     </div>
 }
 
-
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery-2.2.4.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
