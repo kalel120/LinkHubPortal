@@ -2,15 +2,9 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using BLL;
 
 namespace LinkHubUI.Areas.Admin.Controllers {
-    public class ListUserController : Controller {
-        private readonly AdminBusiness objBs;
-        public ListUserController() {
-            objBs = new AdminBusiness();
-        }
-        // GET: Admin/ListUser
+    public class ListUserController : _BaseAdminController {
         public ActionResult Index(string sortOrder, string sortBy, string page) {
             //Store sortOrder and sortBy into viewbag
             ViewBag.SortOrder = sortOrder;

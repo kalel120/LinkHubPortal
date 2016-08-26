@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Web.Mvc;
-using BLL;
 using BOL;
 
 namespace LinkHubUI.Areas.Admin.Controllers {
-    public class CategoryController : Controller {
-        private CategoryBs objBs;
-
-        public CategoryController() {
-            objBs = new CategoryBs();
-        }
-
+    public class CategoryController : _BaseAdminController {
         // GET: Admin/Category
         public ActionResult Index() {
             return View();
@@ -20,7 +13,7 @@ namespace LinkHubUI.Areas.Admin.Controllers {
         public ActionResult Create(tbl_Category category) {
             try {
                 if (ModelState.IsValid) {
-                    objBs.InsertCategory(category);
+                    objBs.CategoryBusiness.InsertCategory(category);
                     TempData["Msg"] = "Created Successfully";
                     return RedirectToAction("Index");
                 }

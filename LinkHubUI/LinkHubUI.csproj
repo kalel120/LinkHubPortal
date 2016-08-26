@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\_BaseAdminController.cs" />
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\BrowseUrlController.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
@@ -178,6 +179,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\_BaseAdmin\" />
     <Folder Include="Areas\Common\Models\" />
     <Folder Include="Areas\Security\Models\" />
   </ItemGroup>
