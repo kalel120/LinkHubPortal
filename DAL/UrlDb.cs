@@ -9,16 +9,16 @@ using BOL;
 
 namespace DAL {
     public class UrlDb {
-        private readonly LinkHubDbEntities _dbEntities;
+        private LinkHubDbEntities _dbEntities;
         public UrlDb() {
             _dbEntities = new LinkHubDbEntities();
         }
 
         public IEnumerable<tbl_Url> GetAllUrl() {
             return _dbEntities.tbl_Url.ToList();
-        } 
+        }
 
-       public tbl_Url GetUrlById(int id) {
+        public tbl_Url GetUrlById(int id) {
             return _dbEntities.tbl_Url.Find(id);
         }
 
@@ -29,6 +29,7 @@ namespace DAL {
 
         public void UpdateUrl(tbl_Url url) {
             _dbEntities.Entry(url).State = EntityState.Modified;
+            _dbEntities.SaveChanges();
         }
 
         public void Delete(int id) {

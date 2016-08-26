@@ -9,7 +9,7 @@ using BOL;
 
 namespace DAL {
     public class UserDb {
-        private readonly LinkHubDbEntities _dbEntities;
+        private LinkHubDbEntities _dbEntities;
 
         public UserDb() {
             _dbEntities = new LinkHubDbEntities();

@@ -1,19 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using BOL.CustomValidations;
 
 namespace BOL {
     public class UrlValidation {
         [Required(ErrorMessage = "Required")]
         public string UrlTitle { get; set; }
 
-        [Required(ErrorMessage = "Required"), Url, UniqueUrl]
+        [Required(ErrorMessage = "Required"), Url]
         public string Url { get; set; }
 
         [Required(ErrorMessage = "Required")]
         public string UrlDesc { get; set; }
     }
-
-    
 
     [MetadataType(typeof(UrlValidation))]
     public partial class tbl_Url{}

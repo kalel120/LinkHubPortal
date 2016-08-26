@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using BLL;
 using BOL;
 
 namespace LinkHubUI.Areas.User.Controllers {
-    public class UrlController : Controller {
-        private AdminBusiness objBs;
+    public class UrlController : _BaseUserController {
 
-        public UrlController() {
-            objBs = new AdminBusiness();
-        }
         public ActionResult Index() {
             ViewBag.CategoryId = new SelectList(objBs.CategoryBusiness.GetAllCategories().ToList(), "CategoryId", "CategoryName");
             ViewBag.UserId = new SelectList(objBs.UserBusiness.GetAllUser().ToList(), "UserId", "UserEmail");
