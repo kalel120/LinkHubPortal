@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 
 namespace LinkHubUI.Areas.Common.Controllers {
+    [AllowAnonymous]
     public class BrowseUrlController : _BaseCommonController {
         // GET: Common/BrowseUrl       
         public ActionResult Index(string sortOrder, string sortBy, string page) {

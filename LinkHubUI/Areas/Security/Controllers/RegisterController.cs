@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using BOL;
 
 namespace LinkHubUI.Areas.Security.Controllers {
+    [AllowAnonymous]
     public class RegisterController : _BaseSecurityController {
         // GET: Security/Register
         public ActionResult Index() {
