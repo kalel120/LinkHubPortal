@@ -54,6 +54,7 @@
     <Compile Include="CategoryValidation.cs" />
     <Compile Include="CustomValidations\UniqueCategoryValidation.cs" />
     <Compile Include="CustomValidations\UniqueUrlAttribute.cs" />
+    <Compile Include="CustomValidations\UniqueUserValidation.cs" />
     <Compile Include="LinkHubDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,6 +81,7 @@
       <DependentUpon>LinkHubDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UrlValidation.cs" />
+    <Compile Include="UserValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="LinkHubDataModel.edmx">
