@@ -14,6 +14,11 @@ namespace LinkHubUI.Areas.User.Controllers {
         [HttpPost]
         public ActionResult Create(tbl_Url objUrlForPost) {
             try {
+                //Assigning default url to 'P' 
+                objUrlForPost.IsApproved = "P";
+                //Auto assign unique id to each URL posted by a user
+                objUrlForPost.UserId = objBs.UserBusiness.GetAllUser().Where(x => x.UserEmail == User.Identity.Name).FirstOrDefault().UserId;
+
                 if(ModelState.IsValid) {
                     objBs.UrlBusiness.Insert(objUrlForPost);
                     TempData["Msg"] = "Created Successfully";

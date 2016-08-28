@@ -10,7 +10,7 @@ namespace LinkHubUI.Areas.Common.Controllers {
             ViewBag.SortOrder = sortOrder;
             ViewBag.SortBy = sortBy;
             //Filter and collect all approved urls
-            var urlList = objBs.UrlBusiness.GetAll().Where(x => x.IsApproved == "P");
+            var urlList = objBs.UrlBusiness.GetAll().Where(x => x.IsApproved == "A");
             switch(sortBy) {
                 case "Title":
                     switch(sortOrder) {

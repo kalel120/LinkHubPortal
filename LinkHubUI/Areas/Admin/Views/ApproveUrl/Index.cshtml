@@ -8,7 +8,14 @@
     @TempData["Msg"].ToString()
 }
 <h2>Manage Urls</h2>
-
+<script>
+    function ApproveUrl() {
+        confirm("Are You Sure You Want To Approve?");
+    }
+    function RejectUrl() {
+        confirm("Are You Sure You Want To Reject?");
+    }
+</script>
 <h4>
     @if(ViewBag.status == "P") {
         <b> @Html.ActionLink("Pending Urls", "Index", new { status = "P" })</b>
@@ -33,7 +40,7 @@
 </h4>
 <table class="table">
     <tr>
-        <th>Approve | Reject</th>
+        <th>Approve | Reject Urls</th>
         <th>
             @Html.DisplayNameFor(model => model.UrlTitle)
         </th>
@@ -58,14 +65,14 @@
     @foreach(var item in Model) {
         <tr>
             <td>
-                @Html.ActionLink("Approve", "Approve", new { id = item.UrlId }) |
-                @Html.ActionLink("Reject", "Reject", new { id = item.UrlId })
+                @Html.ActionLink("Approve", "Approve", new { id = item.UrlId }, new {onclick= "return ApproveUrl();" }) |
+                @Html.ActionLink("Reject", "Reject", new { id = item.UrlId }, new {onclick= "return RejectUrl();" })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UrlTitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Url)
+                @Html.DisplayFor(modelItem => item.Url, new { target = "_blank" })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UrlDesc)

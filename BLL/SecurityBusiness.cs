@@ -4,13 +4,11 @@ using System.Web.Security;
 using DAL;
 
 namespace BLL {
-    public class SecurityBusiness : _BaseBusinessLogic {
-    }
+    public class SecurityBusiness : _BaseBusinessLogic { }
 
-    //Implementing membership provider
+    //Implementation of  custom Membership provider
     public class LinkHubMembershipProvider : MembershipProvider {
         private UserDb _objDb;
-
         public LinkHubMembershipProvider() {
             _objDb = new UserDb();
         }
@@ -154,5 +152,56 @@ namespace BLL {
             }
             return false;
         }
+    }
+
+    //Implementation of Role Provider
+    public class LinkHubRoleProvider : RoleProvider {
+        private UserDb _objDb;
+        public LinkHubRoleProvider() {
+            _objDb = new UserDb();
+        }
+        public override bool IsUserInRole(string username, string roleName) {
+            throw new NotImplementedException();
+        }
+
+        //Implementing Role Provider
+        public override string[] GetRolesForUser(string username) {
+            string[] roles = {_objDb.GetAllUser().Where(x => x.UserEmail == username).FirstOrDefault().Role};
+            return roles;
+        }
+
+        public override void CreateRole(string roleName) {
+            throw new NotImplementedException();
+        }
+
+        public override bool DeleteRole(string roleName, bool throwOnPopulatedRole) {
+            throw new NotImplementedException();
+        }
+
+        public override bool RoleExists(string roleName) {
+            throw new NotImplementedException();
+        }
+
+        public override void AddUsersToRoles(string[] usernames, string[] roleNames) {
+            throw new NotImplementedException();
+        }
+
+        public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames) {
+            throw new NotImplementedException();
+        }
+
+        public override string[] GetUsersInRole(string roleName) {
+            throw new NotImplementedException();
+        }
+
+        public override string[] GetAllRoles() {
+            throw new NotImplementedException();
+        }
+
+        public override string[] FindUsersInRole(string roleName, string usernameToMatch) {
+            throw new NotImplementedException();
+        }
+
+        public override string ApplicationName { get; set; }
     }
 }
