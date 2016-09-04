@@ -20,3 +20,14 @@ D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\EntityFramework.xml
 D:\Projects (VS)\LinkHubPortal\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\Projects (VS)\LinkHubPortal\BLL\obj\Debug\BLL.dll
 D:\Projects (VS)\LinkHubPortal\BLL\obj\Debug\BLL.pdb
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\BLL.dll
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\BLL.pdb
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\BOL.dll
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\DAL.dll
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\EntityFramework.dll
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\BOL.pdb
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\DAL.pdb
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\EntityFramework.xml
+E:\VS Projects\LinkHubPortal\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\VS Projects\LinkHubPortal\BLL\obj\Debug\BLL.dll
+E:\VS Projects\LinkHubPortal\BLL\obj\Debug\BLL.pdb

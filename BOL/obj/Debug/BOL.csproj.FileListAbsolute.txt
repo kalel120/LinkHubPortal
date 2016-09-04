@@ -18,3 +18,12 @@ D:\Projects (VS)\LinkHubPortal\BOL\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects (VS)\LinkHubPortal\BOL\obj\Debug\BOL.csprojResolveAssemblyReference.cache
 D:\Projects (VS)\LinkHubPortal\BOL\obj\Debug\BOL.dll
 D:\Projects (VS)\LinkHubPortal\BOL\obj\Debug\BOL.pdb
+E:\VS Projects\LinkHubPortal\BOL\bin\Debug\BOL.dll.config
+E:\VS Projects\LinkHubPortal\BOL\bin\Debug\BOL.dll
+E:\VS Projects\LinkHubPortal\BOL\bin\Debug\BOL.pdb
+E:\VS Projects\LinkHubPortal\BOL\bin\Debug\EntityFramework.dll
+E:\VS Projects\LinkHubPortal\BOL\bin\Debug\EntityFramework.SqlServer.dll
+E:\VS Projects\LinkHubPortal\BOL\bin\Debug\EntityFramework.xml
+E:\VS Projects\LinkHubPortal\BOL\bin\Debug\EntityFramework.SqlServer.xml
+E:\VS Projects\LinkHubPortal\BOL\obj\Debug\BOL.dll
+E:\VS Projects\LinkHubPortal\BOL\obj\Debug\BOL.pdb
