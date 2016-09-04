@@ -9,3 +9,14 @@ E:\VS Projects\LinkHubUI\BLL\bin\Debug\DAL.pdb
 E:\VS Projects\LinkHubUI\BLL\bin\Debug\EntityFramework.xml
 E:\VS Projects\LinkHubUI\BLL\obj\Debug\BLL.dll
 E:\VS Projects\LinkHubUI\BLL\obj\Debug\BLL.pdb
+D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\BLL.dll
+D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\BLL.pdb
+D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\BOL.dll
+D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\DAL.dll
+D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\EntityFramework.dll
+D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\BOL.pdb
+D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\DAL.pdb
+D:\Projects (VS)\LinkHubPortal\BLL\bin\Debug\EntityFramework.xml
+D:\Projects (VS)\LinkHubPortal\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\Projects (VS)\LinkHubPortal\BLL\obj\Debug\BLL.dll
+D:\Projects (VS)\LinkHubPortal\BLL\obj\Debug\BLL.pdb
