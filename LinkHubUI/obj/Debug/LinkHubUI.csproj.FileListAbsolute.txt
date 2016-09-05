@@ -145,7 +145,6 @@ E:\VS Projects\LinkHubPortal\LinkHubUI\bin\BOL.dll
 E:\VS Projects\LinkHubPortal\LinkHubUI\bin\EntityFramework.dll
 E:\VS Projects\LinkHubPortal\LinkHubUI\bin\EntityFramework.SqlServer.dll
 E:\VS Projects\LinkHubPortal\LinkHubUI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\VS Projects\LinkHubPortal\LinkHubUI\bin\Microsoft.Web.Infrastructure.dll
 E:\VS Projects\LinkHubPortal\LinkHubUI\bin\System.Web.Helpers.dll
 E:\VS Projects\LinkHubPortal\LinkHubUI\bin\System.Web.Mvc.dll
 E:\VS Projects\LinkHubPortal\LinkHubUI\bin\System.Web.Razor.dll
