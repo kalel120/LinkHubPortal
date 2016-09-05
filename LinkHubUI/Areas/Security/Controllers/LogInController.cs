@@ -18,11 +18,11 @@ namespace LinkHubUI.Areas.Security.Controllers {
                     FormsAuthentication.SetAuthCookie(objUser.UserEmail, false);
                     return RedirectToAction("Index", "Home", new { area = "Common"});
                 }
-                TempData["Msg"] = "Signin Failed ";
+                TempData["Msg"] = "Sign In Failed!!";
                 return RedirectToAction("Index");
             }
             catch (Exception exception) {
-                TempData["Msg"] = "Signin Failed "+ exception;
+                TempData["Msg"] = "Sign In Failed "+ exception;
                 return RedirectToAction("Index");
             }
         }

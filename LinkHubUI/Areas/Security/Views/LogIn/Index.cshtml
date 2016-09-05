@@ -6,12 +6,15 @@
 }
 
 <h2>Log In</h2>
+
 @if (TempData["Msg"] != null) {
-    @TempData["Msg"].ToString()
+    <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        @TempData["Msg"].ToString()
+    </div>
 }
 
-@using (Html.BeginForm("SignIn","LogIn",FormMethod.Post))
-{
+@using (Html.BeginForm("SignIn", "LogIn", FormMethod.Post)) {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
@@ -20,7 +23,7 @@
         <div class="form-group ">
             @Html.LabelFor(model => model.UserEmail, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.UserEmail, new { @class = "form-control", placeholder="User Email"} )
+                @Html.TextBoxFor(model => model.UserEmail, new { @class = "form-control", placeholder = "User Email" })
                 @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -28,7 +31,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.PasswordFor(model => model.Password, new { @class = "form-control",placeholder = "Password" })
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Password" })
                 @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -39,9 +42,9 @@
             </div>
         </div>
     </div>
-    
-     
-    
+
+
+
 }
 
 <div>
