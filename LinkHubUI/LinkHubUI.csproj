@@ -130,6 +130,24 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="SliderContent\data1\images\mtiyndm0ndq4nze2mji5otez.jpg" />
+    <Content Include="SliderContent\data1\images\photosharingsiteslistfreetopimagesharingsites.jpg" />
+    <Content Include="SliderContent\data1\images\top3socialnetworkingservices.jpg" />
+    <Content Include="SliderContent\data1\images\wordpressadvice.jpg" />
+    <Content Include="SliderContent\data1\tooltips\mtiyndm0ndq4nze2mji5otez.jpg" />
+    <Content Include="SliderContent\data1\tooltips\photosharingsiteslistfreetopimagesharingsites.jpg" />
+    <Content Include="SliderContent\data1\tooltips\top3socialnetworkingservices.jpg" />
+    <Content Include="SliderContent\data1\tooltips\wordpressadvice.jpg" />
+    <Content Include="SliderContent\engine1\jquery.js" />
+    <Content Include="SliderContent\engine1\script.js" />
+    <Content Include="SliderContent\engine1\style.css" />
+    <Content Include="SliderContent\engine1\style.mod.css" />
+    <Content Include="SliderContent\engine1\wowslider.js" />
+    <Content Include="SliderContent\engine1\wowslider.mod.js" />
+    <Content Include="SliderContent\engine1\ws-ctrl-material.svg" />
+    <Content Include="SliderContent\linkhubWowSlider-howto.html" />
+    <Content Include="SliderContent\linkhubWowSlider-iframe.html" />
+    <Content Include="SliderContent\linkhubWowSlider.html" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Common\Views\Home\Index.cshtml" />
     <Content Include="Areas\Security\Views\_ViewStart.cshtml" />
@@ -173,6 +191,9 @@
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
     <Content Include="Areas\User\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\User\Views\Url\Index.cshtml" />
+    <Content Include="SliderContent\engine1\ws-ctrl-material.eot" />
+    <Content Include="SliderContent\engine1\ws-ctrl-material.ttf" />
+    <Content Include="SliderContent\engine1\ws-ctrl-material.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

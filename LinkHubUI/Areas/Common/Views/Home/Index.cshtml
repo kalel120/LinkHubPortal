@@ -1,7 +1,52 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>LinkHub  Web Portal</h2>
+<h2>LinkHub Web Portal</h2>
+<br />
+<iframe src="~/SliderContent/linkhubWowSlider.html" style="width: 900px; height: 360px; max-width: 100%; overflow: hidden; border: none; padding: 0; margin: 0 auto; display: block;" marginheight="0" marginwidth="0"></iframe>
+<link href="~/Content/HomePageStyle.css" rel="stylesheet"/>
 
+<div style="text-align: center;" >
+    <table class="Table">
+        <tr>
+            <td class="TableDataWithInfo">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">About</h3>
+                    </div>
+                    <div class="panel-body">
+                        This Portal is for sharing links with the community
+                        <br/><br/>You can also share commercial links like offers, discounts, etc.
+                        <br/><br/> If you have links to share? Then just @Html.ActionLink("Register Here", "Index", new { Controller = "Register", Area = "Security" }) and starts sharing link.
+                    </div>
+                </div>
+            </td>
+            <td class="TableDataWithoutInfo"></td>
+            <td class="TableDataWithInfo">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Technologies Used</h3>
+                    </div>
+                    <div class="panel-body">
+                        This Portal is developed using ASP.NET MVC 5 and Entity Framework 6
+                        <br/><br/>Visual Studio 2013 is Used with SQL Server Management Studio 2012
+                        <br/><br/>For Responsive Design Bootstrap is used.
+                    </div>
+                </div>
+            </td>
+            <td class="TableDataWithoutInfo"></td>
+            <td class="TableDataWithInfo">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">More Info.</h3>
+                    </div>
+                    <div class="panel-body">
+                        For More information please contact admin.
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+</div>
