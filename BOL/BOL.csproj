@@ -72,6 +72,7 @@
       <DependentUpon>LinkHubDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickUrlSubmitModel.cs" />
     <Compile Include="tbl_Category.cs">
       <DependentUpon>LinkHubDataModel.tt</DependentUpon>
     </Compile>

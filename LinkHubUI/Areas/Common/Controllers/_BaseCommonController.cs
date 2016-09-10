@@ -3,9 +3,9 @@ using BLL;
 
 namespace LinkHubUI.Areas.Common.Controllers {
     public class _BaseCommonController : Controller {
-        protected AdminBusiness objBs;
+        protected CommonBusiness objBs;
         public _BaseCommonController() {
-            objBs = new AdminBusiness();
+            objBs = new CommonBusiness();
         }
     }
 }

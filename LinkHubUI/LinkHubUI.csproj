@@ -269,6 +269,7 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Areas\Common\Views\QuickUrlSubmit\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -393,6 +394,7 @@
     <Compile Include="Areas\Common\CommonAreaRegistration.cs" />
     <Compile Include="Areas\Common\Controllers\BrowseUrlController.cs" />
     <Compile Include="Areas\Common\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Common\Controllers\QuickUrlSubmitController.cs" />
     <Compile Include="Areas\Common\Controllers\_BaseCommonController.cs" />
     <Compile Include="Areas\Security\Controllers\LogInController.cs" />
     <Compile Include="Areas\Security\Controllers\RegisterController.cs" />
