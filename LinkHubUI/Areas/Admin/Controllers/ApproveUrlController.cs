@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
@@ -49,6 +50,21 @@ namespace LinkHubUI.Areas.Admin.Controllers {
             catch(Exception exception) {
                 TempData["Msg"] = "Failed " + exception;
                 return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult ApproveOrRejectAll(List<int> idList, string status,string currentStatus) {
+            try {
+                objBs.ApproveOrReject(idList, status);
+                TempData["Msg"] = "Operation Sucessfull";
+                var urls = objBs.UrlBusiness.GetAll().Where(x => x.IsApproved == currentStatus).ToList();
+                return PartialView("pv_ApproveUrl", urls);
+            }
+            catch (Exception exception) {
+                TempData["Msg"] = "Operation Failed"+exception.Message;
+                var urls = objBs.UrlBusiness.GetAll().Where(x => x.IsApproved == currentStatus).ToList();
+                return PartialView("pv_ApproveUrl", urls);
             }
         }
     }

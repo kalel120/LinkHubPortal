@@ -31,3 +31,6 @@ E:\VS Projects\LinkHubPortal\BLL\bin\Debug\EntityFramework.xml
 E:\VS Projects\LinkHubPortal\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 E:\VS Projects\LinkHubPortal\BLL\obj\Debug\BLL.dll
 E:\VS Projects\LinkHubPortal\BLL\obj\Debug\BLL.pdb
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\BLL.dll.config
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\EntityFramework.SqlServer.dll
+E:\VS Projects\LinkHubPortal\BLL\bin\Debug\EntityFramework.SqlServer.xml

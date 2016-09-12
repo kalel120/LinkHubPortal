@@ -38,7 +38,7 @@
                                         <!--These are accessible by both ADMIN and AUTHENTIC USER-->
                             <li>@Html.ActionLink("Submit URL", "Index", new { Controller = "Url", Area = "User" })</li>
                             <li>@Html.ActionLink("Log Out", "LogOut", new { Controller = "LogIn", Area = "Security" })</li>
-                            <li> <a href="#"><b>User:</b> @User.Identity.Name</a></li>
+                            @*<li> <a href="#"><b>User:</b> @User.Identity.Name</a></li>*@
                         }
                     }
                     else {

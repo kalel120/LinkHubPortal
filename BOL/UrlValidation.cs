@@ -7,7 +7,6 @@ namespace BOL {
         public string UrlTitle { get; set; }
 
         [Required(ErrorMessage = "Required"), Url]
-        [UniqueUrlAttribute]
         public string Url { get; set; }
 
         [Required(ErrorMessage = "Required")]

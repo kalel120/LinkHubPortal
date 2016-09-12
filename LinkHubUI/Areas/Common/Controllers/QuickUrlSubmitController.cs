@@ -34,7 +34,7 @@ namespace LinkHubUI.Areas.Common.Controllers {
                                                 validationError.ErrorMessage);
                     }
                 }
-                //TempData["Msg"] = "Failed" + exception;
+                TempData["Msg"] = "Failed" + dbEx.Message;
                 return RedirectToAction("Index");
 
             }

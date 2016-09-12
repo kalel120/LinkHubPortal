@@ -1,14 +1,142 @@
-﻿@model IEnumerable<BOL.tbl_Url>
+﻿@using LinkHubUI.Areas.Admin.Controllers
+@model IEnumerable<BOL.tbl_Url>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Manage Urls";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if(TempData["Msg"] != null) {
-    @TempData["Msg"].ToString()
-}
-<h2>Manage Urls</h2>
+
+<h2>Manage URL</h2>
+
+
+@*Modal Progress Bar*@
+<div id="ProgressBar" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <h4 class="modal-title">Loading...</h4>
+        </div>
+        <div class="modal-body">
+            <div class="progress progress-striped active">
+                <div class="progress-bar" style="width: 100%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="nav nav-pills">
+    @if (ViewBag.status == "P") {
+        <li class="active"> @Html.ActionLink("Pending Urls", "Index", new { status = "P" })</li>
+    }
+    else {
+        <li> @Html.ActionLink("Pending Urls", "Index", new { status = "P" }) </li>
+    }
+
+    @if (ViewBag.status == "A") {
+        <li class="active"> @Html.ActionLink("Approved Urls", "Index", new { status = "A" })</li>
+    }
+    else {
+        <li> @Html.ActionLink("Approved Urls", "Index", new { status = "A" }) </li>
+    }
+
+    @if (ViewBag.status == "R") {
+        <li class="active"> @Html.ActionLink("Rejected Urls", "Index", new { status = "R" })</li>
+    }
+    else {
+        <li> @Html.ActionLink("Rejected Urls", "Index", new { status = "R" }) </li>
+    }
+</ul>
+
+@*Render partial view*@
+<div id="DataTable">
+    @Html.Partial("pv_ApproveUrl", Model)
+</div>
+
+<input type="button" id="Approve" value="Approve" class="btn btn-success" /> |
+<input type="button" id="Reject" value="Reject" class="btn btn-danger" />
+
+<script src="~/Scripts/jquery-2.2.4.min.js"></script>
 <script>
+    //For showing progress bar
+    $(document).ready(function () {
+        $(document).ajaxStart(function () {
+            $("#ProgressBar").show();
+        });
+        $(document).ajaxStop(function () {
+            $("#ProgressBar").hide();
+        });
+    });
+
+    BindSelectAll();
+
+    //Ajax Response For Approve
+    $("#Approve").click(function () {
+        //Filter all checked Id's here
+        var checkedIds = $(".ckb").filter(":checked").map(function () { return this.id; });
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ApproveOrRejectAll", "ApproveUrl")",
+            traditional: true,
+            data: {
+                idList: checkedIds.toArray(),
+                status: "A",
+                currentStatus: "@ViewBag.status"
+            },
+            success: successFunction,
+            error: errorFunction
+        });
+
+        function successFunction(data, status) {
+            $("#DataTable").html(data);
+            BindSelectAll();
+        }
+        function errorFunction() {
+            alert('Something is wrong');
+        }
+    });
+
+    //Ajax Response for Reject
+    $("#Reject").click(function () {
+        //Filter all checked id's
+        var checkedIds = $(".ckb").filter(":checked").map(function () { return this.id; });
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ApproveOrRejectAll","ApproveUrl")",
+            traditional: true,
+            data: {
+                idList: checkedIds.toArray(),
+                status: "R",
+                currentStatus: "@ViewBag.status"
+            },
+            success: successFunction,
+            error: errorFunction
+        });
+        function successFunction(data, status) {
+            $("#DataTable").html(data);
+            BindSelectAll();
+        }
+        function errorFunction() {
+            alert('Something is wrong');
+        }
+    });
+
+    //SELECT All Urls for Approve or Reject
+    function BindSelectAll() {        
+        $(document).ready(function () {
+            $("#SelectAll").click(function (event) { //on click
+                if (this.checked) { //Loop through each checkboxes and select all checkboxes
+                    $('.ckb').each(function () {
+                        this.checked = true;
+                    });
+                } else { //Loop through all checkboxes and deselect all checkboxces
+                    $('.ckb').each(function () {
+                        this.checked = false;
+                    });
+                }
+            });
+        });
+    }
+
+    //Approval or Rejection Pop Up
     function ApproveUrl() {
         confirm("Are You Sure You Want To Approve?");
     }
@@ -16,76 +144,3 @@
         confirm("Are You Sure You Want To Reject?");
     }
 </script>
-<h4>
-    @if(ViewBag.status == "P") {
-        <b> @Html.ActionLink("Pending Urls", "Index", new { status = "P" })</b>
-    }
-    else {
-        @Html.ActionLink("Pending Urls", "Index", new { status = "P" })
-    }
-    |
-    @if(ViewBag.status == "A") {
-        <b> @Html.ActionLink("Approved Urls", "Index", new { status = "A" })</b>
-    }
-    else {
-        @Html.ActionLink("Approved Urls", "Index", new { status = "A" })
-    }
-    |
-    @if(ViewBag.status == "R") {
-        <b> @Html.ActionLink("Rejected Urls", "Index", new { status = "R" })</b>
-    }
-    else {
-        @Html.ActionLink("Rejected Urls", "Index", new { status = "R" })
-    }
-</h4>
-<table class="table">
-    <tr>
-        <th>Approve | Reject Urls</th>
-        <th>
-            @Html.DisplayNameFor(model => model.UrlTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UrlDesc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsApproved)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tbl_Category.CategoryName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tbl_User.UserEmail)
-        </th>
-
-    </tr>
-
-    @foreach(var item in Model) {
-        <tr>
-            <td>
-                @Html.ActionLink("Approve", "Approve", new { id = item.UrlId }, new {onclick= "return ApproveUrl();" }) |
-                @Html.ActionLink("Reject", "Reject", new { id = item.UrlId }, new {onclick= "return RejectUrl();" })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UrlTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Url, new { target = "_blank" })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UrlDesc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsApproved)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tbl_Category.CategoryName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tbl_User.UserEmail)
-            </td>
-        </tr>
-    }
-</table>
